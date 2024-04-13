@@ -27,7 +27,7 @@ public class ProductSearchTest extends BaseTestClass {
 
         // Assert that all product entries on the page contain "table" in the title.
         // Returns on the last SRP.
-        srp = verifyTitleContainsTextOnAllPages(srp);
+        srp = verifyTitleContainsTextOnAllPages("table", srp);
         Assertions.assertEquals(srp.getCurrentPageNumber(), numberOfPages);
 
         // Grab the description from the last item, add item to the cart, then go to the cart.
@@ -45,10 +45,10 @@ public class ProductSearchTest extends BaseTestClass {
     }
 
     // Helper method for verifying text in all result item descriptions on all SRPs.
-    private SearchResultsPage verifyTitleContainsTextOnAllPages(SearchResultsPage srp) {
+    private SearchResultsPage verifyTitleContainsTextOnAllPages(String text, SearchResultsPage srp) {
         int pageCount = srp.getNumberOfPages();
         for (int i = 0; i < pageCount - 1; i++) {
-            Boolean titleContainsText = srp.verifyProductTitlesContain("table");
+            Boolean titleContainsText = srp.verifyProductTitlesContain(text);
             MatcherAssert.assertThat("All result titles should contain text", titleContainsText, equalTo(true));
             srp = srp.navigateToPage(i + 2);  // +2 due to pages being 1-indexed + next page.
         }
