@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.equalTo;
  */
 public class ProductSearchTest extends BaseTestClass {
     @Test
-    public void searchForTable() throws InterruptedException {
+    public void searchForTable() {
         // Search for "stainless work table".
         SearchResultsPage srp = homePage.searchForText("stainless work table");
         int numberOfPages = srp.getNumberOfPages();
