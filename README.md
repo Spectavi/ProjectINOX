@@ -8,3 +8,5 @@ Example Selenium Test for WebstaurantStore
 5. Empty cart.
 
 Stainless steel, inox steel, or inox from the French word "inoxydable", is a steel alloy with a minimum of 10.5% chromium content by mass.
+
+![Test Run Video](http://github.com/Spectavi/ProjectINOX/blob/main/WebstaurantTestRunVideo_1080p.gif?raw=true)
